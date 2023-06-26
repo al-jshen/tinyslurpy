@@ -12,8 +12,7 @@ def main():
     email = input("Email (default js5013@princeton.edu): ") or "js5013@princeton.edu"
     command = input("Command: ")
 
-    batch_file = f"""
-#!/bin/bash
+    batch_file = f"""#!/bin/bash
 #SBATCH --job-name={jobname}
 #SBATCH --output={jobname}.out
 #SBATCH --error={jobname}.err
