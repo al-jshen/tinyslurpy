@@ -19,8 +19,11 @@ def main():
 #SBATCH --nodes={nodes}
 #SBATCH --ntasks={tasks}
 #SBATCH --cpus-per-task={cpus_per_task}
-#SBATCH --gres=gpu:{gpus}
-#SBATCH --mem-per-cpu={mem_per_cpu}
+"""
+    if gpus:
+        batch_file += f"""\n#SBATCH --gres=gpu:{gpus}"""
+
+    batch_file += f"""\n#SBATCH --mem-per-cpu={mem_per_cpu}
 #SBATCH --time={time}
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
