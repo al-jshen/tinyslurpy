@@ -20,7 +20,7 @@ def main():
 #SBATCH --ntasks={tasks}
 #SBATCH --cpus-per-task={cpus_per_task}
 """
-    if gpus:
+    if int(gpus) > 0:
         batch_file += f"""\n#SBATCH --gres=gpu:{gpus}"""
 
     batch_file += f"""\n#SBATCH --mem-per-cpu={mem_per_cpu}
