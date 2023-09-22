@@ -13,6 +13,7 @@ def main():
     command = input("Command: ")
 
     batch_file = f"""#!/bin/bash
+    Hello! My name is Slurpy :) \nI'd love to help you with your slurm job. Can you please give me the following info and I'll write your file for you! <3
 #SBATCH --job-name={jobname}
 #SBATCH --output={jobname}.out
 #SBATCH --error={jobname}.err
