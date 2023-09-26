@@ -2,6 +2,8 @@ import subprocess
 
 
 def main():
+    print("Hello! My name is Slurpy :) \nI'd love to help you with your slurm job. Can you please give me the following info \nand I'll write your file for you! <3")
+    
     jobname = input("Job name: ")
     nodes = input("Nodes (default 1): ") or 1
     tasks = input("Tasks (default 1): ") or 1
