@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "plum"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Jeff Shen <shenjeff@princeton.edu>"]
 readme = "README.md"
