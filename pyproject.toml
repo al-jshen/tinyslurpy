@@ -1,13 +1,12 @@
 [tool.poetry]
-name = "plum"
-version = "0.1.1"
-description = ""
-authors = ["Jeff Shen <shenjeff@princeton.edu>"]
+name = "tinyslurpy"
+version = "0.1.2"
+description = "Slurm job helper - please alias as slurpy :)"
+authors = ["Jeff Shen <shenjeff@princeton.edu>", "Lindsay Smith <lindsay.smith@princeton.edu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
 
 [build-system]
 requires = ["poetry-core"]
