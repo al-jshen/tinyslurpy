@@ -26,8 +26,8 @@ def main():
 #SBATCH --error={jobname}.err
 #SBATCH --nodes={nodes}
 #SBATCH --ntasks={tasks}
-#SBATCH --cpus-per-task={cpus_per_task}
-"""
+#SBATCH --cpus-per-task={cpus_per_task}"""
+
     if int(gpus) > 0:
         batch_file += f"""\n#SBATCH --gres=gpu:{gpus}"""
     if constraint is not None:
@@ -59,6 +59,6 @@ def main():
         "Thanks for letting me help you write your slurm file, I'm always here to help! ^_^ Bye for now <3"
     )
 
+
 if __name__ == "__main__":
     main()
-
