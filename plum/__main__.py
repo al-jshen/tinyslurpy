@@ -55,6 +55,10 @@ def main():
     if save.lower() in ["n", "no"]:
         subprocess.run(["rm", f"{jobname}.slurm"])
 
+    print(
+        "Thanks for letting me help you write your slurm file, I'm always here to help! ^_^ Bye for now <3"
+    )
 
 if __name__ == "__main__":
     main()
+
