@@ -8,6 +8,12 @@ Hi! My name is Slurpy, and I am here to help you write your Slurm jobs. I will p
 pip install tinyslurpy
 ```
 
-Remember to alias `tinyslurpy` to `slurpy`!
+## Usage
+
+```bash
+python -m tinyslurpy
+```
+
+Please alias the above to `slurpy`!
 
 See you soon! <3 ^\_^
