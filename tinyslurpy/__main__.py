@@ -13,7 +13,7 @@ def main():
     gpus = input("GPUs (default 0): ") or 0
     constraint = input("Constraint (default none): ") or None
     partition = input("Partition (default none): ") or None
-    mem_per_cpu = input("Memory per CPU (default 10G): ") or "10G"
+    mem = input("Total memory (default 50G): ") or "50G"
     time = input("Time (default 00:10:00): ") or "00:10:00"
     email = input("Email (default none): ") or None
     command = input("Command: ")
@@ -26,7 +26,8 @@ def main():
 #SBATCH --error={jobname}.err
 #SBATCH --nodes={nodes}
 #SBATCH --ntasks={tasks}
-#SBATCH --cpus-per-task={cpus_per_task}"""
+#SBATCH --cpus-per-task={cpus_per_task}
+"""
 
     if int(gpus) > 0:
         batch_file += f"""\n#SBATCH --gres=gpu:{gpus}"""
@@ -35,7 +36,7 @@ def main():
     if partition is not None:
         batch_file += f"""\n#SBATCH --partition={partition}"""
 
-    batch_file += f"""\n#SBATCH --mem-per-cpu={mem_per_cpu}
+    batch_file += f"""\n#SBATCH --mem={mem}
 #SBATCH --time={time}"""
 
     if email is not None:
