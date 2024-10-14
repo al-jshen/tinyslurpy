@@ -8,9 +8,9 @@ def main():
 
     jobname = input('Job name (default "slurpy"): ') or "slurpy"
     nodes = input("Nodes (default 1): ") or 1
-    tasks = input("Tasks (default 1): ") or 1
+    tasks_per_node = input("Tasks per node (default 1): ") or 1
     cpus_per_task = input("CPUs per task (default 1): ") or 1
-    gpus = input("GPUs (default 0): ") or 0
+    gpus_per_task = input("GPUs per task (default 0): ") or 0
     constraint = input("Constraint (default none): ") or None
     partition = input("Partition (default none): ") or None
     mem = input("Total memory (default 50G): ") or "50G"
@@ -25,12 +25,12 @@ def main():
 #SBATCH --output={jobname}.out
 #SBATCH --error={jobname}.err
 #SBATCH --nodes={nodes}
-#SBATCH --ntasks={tasks}
+#SBATCH --ntasks-per-node={tasks_per_node}
 #SBATCH --cpus-per-task={cpus_per_task}
 """
 
     if int(gpus) > 0:
-        batch_file += f"""\n#SBATCH --gres=gpu:{gpus}"""
+        batch_file += f"""\n#SBATCH --gpus-per-task={gpus_per_task}"""
     if constraint is not None:
         batch_file += f"""\n#SBATCH --constraint={constraint}"""
     if partition is not None:
