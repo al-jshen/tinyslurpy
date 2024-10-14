@@ -29,7 +29,7 @@ def main():
 #SBATCH --cpus-per-task={cpus_per_task}
 """
 
-    if int(gpus) > 0:
+    if int(gpus_per_task) > 0:
         batch_file += f"""\n#SBATCH --gpus-per-task={gpus_per_task}"""
     if constraint is not None:
         batch_file += f"""\n#SBATCH --constraint={constraint}"""
